@@ -339,15 +339,74 @@ import matplotlib.pyplot as plt
 
 
 ```python
-plt.figure(figsize=(10, 5))
-plt.hist(df["precipitation"], bins=50)
-plt.tight_layout()
+plt.figure(figsize=(20, 8))
+plt.plot(df['avgwindspeed'])
 plt.show()
 ```
 
 
 ![png](output_4_0.png)
 
+
+I visualized the average of the wind speed during the whole period. 
+Mostly wind speed is between 2.5 ~ 7.5mhp.
+
+
+```python
+plt.figure(figsize=(20, 8))
+plt.scatter(
+    x=df['avgwindspeed'],
+    y=df['fastest2minwindspeed'],
+    color='purple'
+)
+plt.show()
+```
+
+
+![png](output_6_0.png)
+
+
+This is a result of relationship between avgwindspeed and fastest2minwindspeed.
+As we can see here, fastest2minwindspeed is pretty much proportional to avgwindspeed.
+
+
+```python
+plt.hist(df['avgwindspeed'], bins=50, color='red')
+plt.xlabel('avgwindspeed')
+plt.show()
+```
+
+
+![png](output_8_0.png)
+
+
+This is a result that shows numbers of days with each averege wind speed.
+You can see that avgwindspeeds are between 2.5 ~ 7.5.
+
+
+```python
+plt.figure(figsize=(10, 5))
+
+plt.subplot(1, 2, 1)
+plt.hist(df['fastest2minwinddir'], color='purple')
+plt.xlabel('fastest2minwinddir')
+plt.title('fastest2minwinddir')
+
+plt.subplot(1, 2, 2)
+plt.hist(df['fastest5secwinddir'], color='purple')
+plt.xlabel('fastest5secwinddir')
+plt.title('fastest5secwinddir')
+
+plt.tight_layout()
+plt.show()
+```
+
+
+![png](output_10_0.png)
+
+
+This is results that the directions of fastest 2min & 5 secd wind.
+Major direction of the fastest wind is 250 degree.
 
 
 ```python
