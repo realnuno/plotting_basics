@@ -345,7 +345,7 @@ plt.show()
 ```
 
 
-![png](output_4_0.png)
+![png](output_4_1.png)
 
 
 I visualized the average of the wind speed during the whole period. 
